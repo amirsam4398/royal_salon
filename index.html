@@ -22,13 +22,25 @@
         <p class="text-xs text-gray-400 mt-1">رزرو آنلاین نوبت + گارانتی قطعی با بیعانه</p>
     </header>
 
-    <!-- پنل مدیریت سریع برای سالن‌دار (تنظیم کارت و واتس‌اپ) -->
-    <section class="bg-zinc-900 p-4 rounded-2xl border border-amber-500/40 space-y-3 mb-4">
-        <h2 class="text-xs font-bold gold-text">⚙️ پنل تنظیمات اختصاصی سالن‌دار (تنظیم کارت و واریزی):</h2>
-        <div class="grid grid-cols-1 gap-2">
-            <input type="text" id="adminCardInput" placeholder="شماره کارت ۱۶ رقمی (مثلاً: ۶۱۰۴...)" oninput="updateCardPreview()" class="w-full bg-black border border-zinc-700 rounded-xl p-2.5 text-xs text-amber-300 font-mono text-center focus:outline-none">
-            <input type="text" id="adminNameInput" placeholder="نام صاحب حساب (مثلاً: سارا سعادتی)" oninput="updateCardPreview()" class="w-full bg-black border border-zinc-700 rounded-xl p-2.5 text-xs text-gray-300 text-center focus:outline-none">
-            <input type="text" id="adminPhoneInput" value="989366681963" placeholder="شماره واتس‌اپ دریافت فیش" class="w-full bg-black border border-zinc-700 rounded-xl p-2.5 text-xs text-gray-300 text-center focus:outline-none">
+    <!-- پنل تنظیمات دلخواه شماره کارت (مثل اپلیکیشن) -->
+    <section class="bg-zinc-900 p-4 rounded-2xl border border-amber-500/60 space-y-3 mb-4 shadow-xl">
+        <h2 class="text-xs font-bold gold-text">⚙️ بخش مدیریت (تنظیم اختصاصی شماره کارت سالن):</h2>
+        <div class="space-y-2">
+            <div>
+                <label class="block text-[11px] text-gray-300 mb-1">شماره کارت ۱۶ رقمی:</label>
+                <input type="text" id="customCardInput" placeholder="مثال: 6104337912345678" class="w-full bg-black border border-amber-500 rounded-xl p-3 text-sm text-amber-300 font-mono text-center focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-[11px] text-gray-300 mb-1">نام صاحب حساب:</label>
+                <input type="text" id="customNameInput" placeholder="مثال: سارا سعادتی" class="w-full bg-black border border-zinc-700 rounded-xl p-2.5 text-xs text-gray-300 text-center focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-[11px] text-gray-300 mb-1">شماره واتس‌اپ مدیر سالن:</label>
+                <input type="text" id="customPhoneInput" value="989366681963" class="w-full bg-black border border-zinc-700 rounded-xl p-2.5 text-xs text-gray-300 text-center focus:outline-none" dir="ltr">
+            </div>
+            <button onclick="saveCardInfo()" class="w-full bg-amber-500 text-black font-bold py-2 rounded-xl text-xs cursor-pointer shadow">
+                💾 اعمال و ذخیره شماره کارت روی سامانه
+            </button>
         </div>
     </section>
 
@@ -80,11 +92,11 @@
             </div>
         </div>
 
-        <!-- نمایش زنده شماره کارت وارد شده -->
+        <!-- بخش نمایش کارت برای مشتری -->
         <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/30 text-xs space-y-2">
             <p class="gold-text font-bold">💳 کارت به کارت بیعانه (جهت قطعی شدن نوبت):</p>
             <p class="text-gray-300">لطفاً مبلغ بیعانه را به کارت زیر واریز نمایید:</p>
-            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">---- ---- ---- ----</p>
+            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">هنوز شماره کارتی ثبت نشده است</p>
             <p id="displayHolder" class="text-[10px] text-center text-gray-400">به نام: مدیریت سالن</p>
         </div>
 
@@ -160,12 +172,18 @@
     </footer>
 
     <script>
-        function updateCardPreview() {
-            const cardVal = document.getElementById('adminCardInput').value;
-            const nameVal = document.getElementById('adminNameInput').value;
+        function saveCardInfo() {
+            const cardVal = document.getElementById('customCardInput').value;
+            const nameVal = document.getElementById('customNameInput').value;
 
-            document.getElementById('displayCard').innerText = cardVal ? cardVal : "---- ---- ---- ----";
+            if(!cardVal) {
+                alert('لطفاً شماره کارت را وارد کنید.');
+                return;
+            }
+
+            document.getElementById('displayCard').innerText = cardVal;
             document.getElementById('displayHolder').innerText = nameVal ? "به نام: " + nameVal : "به نام: مدیریت سالن";
+            alert('✅ شماره کارت با موفقیت روی سامانه اعمال شد!');
         }
 
         let bookings = [];
@@ -175,17 +193,23 @@
             const service = document.getElementById('serviceSelect').value;
             const date = document.getElementById('dateInput').value;
             const time = document.getElementById('timeSelect').value;
-            const phoneNum = document.getElementById('adminPhoneInput').value || "989366681963";
+            const cardVal = document.getElementById('customCardInput').value;
+            const phoneNum = document.getElementById('customPhoneInput').value || "989366681963";
 
             if(!name || !phone || !date) {
-                alert('لطفاً اطلاعات را کامل پر کنید.');
+                alert('لطفاً اطلاعات رزرو را کامل پر کنید.');
+                return;
+            }
+
+            if(!cardVal) {
+                alert('لطفاً ابتدا شماره کارت خود را در بخش تنظیمات وارد و ذخیره کنید.');
                 return;
             }
 
             bookings.push({ name, phone, service, date, time });
             updateCRM();
 
-            const message = `✨ رزرو جدید از اینستاگرام (ثبت بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
+            const message = `✨ رزرو جدید از اینستاگرام (ثبت بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}\n💳 واریز به کارت: ${cardVal}`;
             const encodedMsg = encodeURIComponent(message);
 
             document.getElementById('whatsappBtn').href = `https://wa.me/${phoneNum}?text=${encodedMsg}`;
@@ -212,5 +236,3 @@
     </script>
 </body>
 </html>
-o
-
