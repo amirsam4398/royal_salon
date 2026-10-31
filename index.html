@@ -15,23 +15,26 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 max-w-xl mx-auto">
 
-    <!-- بخش تنظیمات اختصاصی سالن (سالن‌دار شماره کارت و نام خود را اینجا وارد می‌کند) -->
+    <!-- ======================================================== -->
+    <!-- ⚙️ بخش تنظیمات اختصاصی سالن (سالن‌دار اطلاعات خود را اینجا وارد می‌کند) -->
+    <!-- ======================================================== -->
     <script>
         const salonConfig = {
-            cardHolderName: "لطفاً نام صاحب کارت را وارد کنید", // نام صاحب حساب سالن‌دار
-            cardNumber: "---- ---- ---- ----",                 // شماره کارت ۱۶ رقمی سالن‌دار
-            whatsappNumber: "989366681963"                    // شماره واتس‌اپ دریافت فیش
+            salonName: "سالن زیبایی رویال",                 // نام سالن
+            cardHolderName: "نام صاحب حساب (مثلاً: سارا سعادتی)", // نام صاحب کارت
+            cardNumber: "6104-3379-XXXX-XXXX",             // شماره کارت ۱۶ رقمی
+            whatsappNumber: "989366681963"                 // شماره واتس‌اپ برای دریافت فیش بیعانه
         };
     </script>
 
     <!-- هدر سالن -->
     <header class="text-center py-6 border-b gold-border mb-6">
         <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">ویترین اختصاصی بیو اینستاگرام</span>
-        <h1 class="text-2xl font-bold gold-text tracking-wider mt-3">سالن زیبایی رویال</h1>
+        <h1 id="headerTitle" class="text-2xl font-bold gold-text tracking-wider mt-3">سالن زیبایی رویال</h1>
         <p class="text-xs text-gray-400 mt-1">رزرو آنلاین نوبت + گارانتی قطعی با بیعانه</p>
     </header>
 
-    <!-- فرم رزرو با تعرفه‌های لوکس تهران و بیعانه -->
+    <!-- فرم رزرو و تعرفه‌ها -->
     <main class="space-y-4 flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800 shadow-xl">
         <div>
             <label class="block text-xs font-semibold mb-2 text-gray-300">انتخاب خدمت تخصصی (مبلغ پرداختی آنلاین <span class="text-amber-400">بیعانه</span> است):</label>
@@ -42,7 +45,7 @@
                     <option value="براشینگ و استایل مو (کل: ۶۰۰,۰۰۰ ت) - بیعانه: ۱۵۰,۰۰۰ ت">براشینگ مو (کل: ۶۰۰ ه | بیعانه: ۱۵۰ ه)</option>
                 </optgroup>
                 <optgroup label="💄 چهره و میکاپ عروس">
-                    <option value="میکاپ و گریم VIP عروس (کل: ۱۲,۰۰۰,۰۰۰ ت) - بیعانه تخصصی: ۳,۰۰۰,۰۰۰ ت">میکاپ VIP عروس (کل: ۱۲ م | بیعانه: ۳ م)</option>
+                    <option value="میکاپ و گریم VIP عروس (کل: ۱۲,۰۰۰,۰۰۰ ت) - بیعانه: ۳,۰۰۰,۰۰۰ ت">میکاپ VIP عروس (کل: ۱۲ م | بیعانه: ۳ م)</option>
                     <option value="لیفت و لمینت ابرو (کل: ۹۰۰,۰۰۰ ت) - بیعانه: ۲۰۰,۰۰۰ ت">لیفت ابرو (کل: ۹۰۰ ه | بیعانه: ۲۰۰ ه)</option>
                 </optgroup>
                 <optgroup label="💅 ناخن و اسپا">
@@ -79,11 +82,11 @@
             </div>
         </div>
 
-        <!-- بخش شماره کارت پویا و خالی برای سالن‌دار -->
+        <!-- نمایش شماره کارت ثبت شده توسط سالن‌دار -->
         <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/30 text-xs space-y-2">
             <p class="gold-text font-bold">💳 کارت به کارت بیعانه (جهت قطعی شدن نوبت):</p>
             <p class="text-gray-300">لطفاً مبلغ بیعانه را به کارت زیر واریز نمایید:</p>
-            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">---- ---- ---- ----</p>
+            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">----------------</p>
             <p id="displayHolder" class="text-[10px] text-center text-gray-400">به نام: مدیریت سالن</p>
         </div>
 
@@ -159,7 +162,8 @@
     </footer>
 
     <script>
-        // بارگذاری خودکار اطلاعات کارت سالن‌دار از بخش تنظیمات بالای کد
+        // اعمال خودکار اطلاعات سالن‌دار در صفحه
+        document.getElementById('headerTitle').innerText = salonConfig.salonName;
         document.getElementById('displayCard').innerText = salonConfig.cardNumber;
         document.getElementById('displayHolder').innerText = "به نام: " + salonConfig.cardHolderName;
 
@@ -179,7 +183,7 @@
             bookings.push({ name, phone, service, date, time });
             updateCRM();
 
-            const message = `✨ رزرو جدید از اینستاگرام (ثبت بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
+            const message = `✨ رزرو جدید از اینستاگرام (${salonConfig.salonName}) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
             const encodedMsg = encodeURIComponent(message);
 
             document.getElementById('whatsappBtn').href = `https://wa.me/${salonConfig.whatsappNumber}?text=${encodedMsg}`;
