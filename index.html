@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سیستم هوشمند رزرو و CRM | سالن زیبایی رویال</title>
+    <title>سامانه جامع رزرو و باشگاه مشتریان | سالن زیبایی رویال</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap');
@@ -15,22 +15,34 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 max-w-xl mx-auto">
 
-    <!-- هدر سالن -->
+    <!-- هدر سالن و معرفی بیو اینستاگرام -->
     <header class="text-center py-6 border-b gold-border mb-6">
-        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">سیستم جامع نوبت‌دهی و CRM</span>
+        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">ویترین اختصاصی اینستاگرام</span>
         <h1 class="text-2xl font-bold gold-text tracking-wider mt-3">سالن زیبایی رویال</h1>
-        <p class="text-xs text-gray-400 mt-1">رزرو آنلاین خدمات تخصصی و مدیریت هوشمند مشتریان</p>
+        <p class="text-xs text-gray-400 mt-1">بدون نیاز به سایت! نوبت خود را آنلاین رزرو کنید 💅✨</p>
     </header>
 
-    <!-- فرم رزرو -->
+    <!-- فرم رزرو و انتخاب دسته‌بندی خدمات -->
     <main class="space-y-5 flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800 shadow-xl">
         <div>
-            <label class="block text-xs font-semibold mb-2 text-gray-300">انتخاب خدمت:</label>
+            <label class="block text-xs font-semibold mb-2 text-gray-300">دسته‌بندی و انتخاب خدمت:</label>
             <select id="serviceSelect" class="w-full bg-zinc-900 border gold-border rounded-xl p-3 text-sm focus:outline-none">
-                <option value="براشینگ و استایل مو - ۲۵۰,۰۰۰ تومان">براشینگ و استایل مو (۲۵۰,۰۰۰ تومان)</option>
-                <option value="رنگ و لایت تخصصی - ۱,۲۰۰,۰۰۰ تومان">رنگ و لایت تخصصی (۱,۲۰۰,۰۰۰ تومان)</option>
-                <option value="میکاپ و گریم عروس - ۳,۵۰۰,۰۰۰ تومان">میکاپ و گریم عروس (۳,۵۰۰,۰۰۰ تومان)</option>
-                <option value="کاشت و ترمیم ناخن - ۴۰۰,۰۰۰ تومان">کاشت و ترمیم ناخن (۴۰۰,۰۰۰ تومان)</option>
+                <optgroup label="✨ خدمات مو و استایل">
+                    <option value="براشینگ و استایل مو - ۲۵۰,۰۰۰ تومان">براشینگ و استایل مو (۲۵۰,۰۰۰ تومان)</option>
+                    <option value="کراتین و احیای مو - ۱,۲۰۰,۰۰۰ تومان">کراتین و احیای مو (۱,۲۰۰,۰۰۰ تومان)</option>
+                    <option value="رنگ و لایت تخصصی - ۱,۵۰۰,۰۰۰ تومان">رنگ و لایت تخصصی (۱,۵۰۰,۰۰۰ تومان)</option>
+                </optgroup>
+                <optgroup label="💄 چهره و آرایش">
+                    <option value="میکاپ و گریم عروس - ۳,۵۰۰,۰۰۰ تومان">میکاپ و گریم عروس (۳,۵۰۰,۰۰۰ تومان)</option>
+                    <option value="لیفت و اصلاح ابرو - ۳۰۰,۰۰۰ تومان">لیفت و اصلاح ابرو (۳۰۰,۰۰۰ تومان)</option>
+                </optgroup>
+                <optgroup label="💅 ناخن و دست">
+                    <option value="کاشت و ترمیم ناخن - ۴۰۰,۰۰۰ تومان">کاشت و ترمیم ناخن (۴۰۰,۰۰۰ تومان)</option>
+                    <option value="پدیکور و اسپا - ۵۰۰,۰۰۰ تومان">پدیکور و اسپا (۵۰۰,۰۰۰ تومان)</option>
+                </optgroup>
+                <optgroup label="🌿 پوست و زیبایی">
+                    <option value="فیشیال تخصصی پوست - ۸۰۰,۰۰۰ تومان">فیشیال تخصصی پوست (۸۰۰,۰۰۰ تومان)</option>
+                </optgroup>
             </select>
         </div>
 
@@ -53,7 +65,7 @@
 
         <div class="space-y-3">
             <div>
-                <label class="block text-xs font-semibold mb-2 text-gray-300">نام و نام خانوادگی مشتری:</label>
+                <label class="block text-xs font-semibold mb-2 text-gray-300">نام و نام خانوادگی:</label>
                 <input type="text" id="clientName" placeholder="مثال: سارا سعادتی" class="w-full bg-zinc-900 border gold-border rounded-xl p-3 text-sm focus:outline-none">
             </div>
             <div>
@@ -63,30 +75,30 @@
         </div>
 
         <button onclick="submitBooking()" class="w-full gold-gradient text-black font-bold py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer">
-            ثبت نهایی و ارسال به مدیریت سالن
+            ثبت نهایی نوبت و ارسال به سالن
         </button>
 
-        <!-- دکمه‌های ارسال به پیام‌رسان‌ها -->
+        <!-- دکمه‌های پیام‌رسان‌ها -->
         <div id="socialBox" class="hidden space-y-2 pt-2 border-t border-zinc-800">
-            <p class="text-xs text-center text-gray-400 mb-2">ارسال اطلاعات رزرو به مدیریت از طریق:</p>
+            <p class="text-xs text-center text-gray-400 mb-2">تایید نهایی نوبت از طریق پیام‌رسان:</p>
             <div class="grid grid-cols-3 gap-2">
-                <a id="whatsappBtn" href="#" target="_blank" class="bg-green-700 text-center py-2 rounded-xl text-xs font-bold hover:bg-green-600 text-white">واتس‌اپ</a>
-                <a id="telegramBtn" href="#" target="_blank" class="bg-blue-600 text-center py-2 rounded-xl text-xs font-bold hover:bg-blue-500 text-white">تلگرام</a>
-                <a id="baleBtn" href="#" target="_blank" class="bg-orange-600 text-center py-2 rounded-xl text-xs font-bold hover:bg-orange-500 text-white">پیام‌رسان بله</a>
+                <a id="whatsappBtn" href="#" target="_blank" class="bg-green-700 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-green-600">واتس‌اپ</a>
+                <a id="telegramBtn" href="#" target="_blank" class="bg-blue-600 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-blue-500">تلگرام</a>
+                <a id="baleBtn" href="#" target="_blank" class="bg-orange-600 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-orange-500">پیام‌رسان بله</a>
             </div>
         </div>
     </main>
 
-    <!-- پنل CRM (لیست نوبت‌های ثبت شده محلی) -->
+    <!-- پنل مدیریت CRM محلی -->
     <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border border-zinc-800">
-        <h2 class="text-sm font-bold gold-text mb-3">📋 پنل مدیریت CRM (نوبت‌های ثبت شده)</h2>
+        <h2 class="text-sm font-bold gold-text mb-3">📋 پنل مدیریت CRM سالن</h2>
         <div class="overflow-x-auto">
             <table class="w-full text-right text-xs">
                 <thead>
                     <tr class="border-b border-zinc-800 text-gray-400">
                         <th class="p-2">مشتری</th>
                         <th class="p-2">خدمت</th>
-                        <th class="p-2">تاریخ و ساعت</th>
+                        <th class="p-2">زمان</th>
                     </tr>
                 </thead>
                 <tbody id="crmTableBody">
@@ -116,14 +128,14 @@
             const time = document.getElementById('timeSelect').value;
 
             if(!name || !phone || !date) {
-                alert('لطفاً تمامی فیلدها (نام، شماره تماس و تاریخ) را به دقت پر کنید.');
+                alert('لطفاً تمامی فیلدها را به دقت پر کنید.');
                 return;
             }
 
             bookings.push({ name, phone, service, date, time });
             updateCRM();
 
-            const message = `✨ رزرو جدید در سالن زیبایی ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
+            const message = `✨ رزرو جدید از طریق پیج اینستاگرام ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
             const encodedMsg = encodeURIComponent(message);
             const targetPhone = "989366681963";
 
@@ -132,7 +144,7 @@
             document.getElementById('baleBtn').href = `https://ble.ir/send?text=${encodedMsg}`;
 
             document.getElementById('socialBox').classList.remove('hidden');
-            alert('✅ نوبت با موفقیت در سیستم CRM ثبت شد و لینک‌های ارسال آماده شد.');
+            alert('✅ نوبت ثبت شد! لطفاً جهت تایید نهایی از طریق دکمه‌های زیر به سالن پیام دهید.');
         }
 
         function updateCRM() {
