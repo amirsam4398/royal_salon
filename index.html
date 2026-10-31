@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سامانه رزرو هوشمند اینستاگرام | رویال فام</title>
+    <title>سامانه هوشمند مدیریت و رزرو سالن زیبایی | رویال فام</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap');
@@ -15,21 +15,44 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 max-w-xl mx-auto">
 
-    <!-- هدر بیو اینستاگرام -->
+    <!-- هدر معرفی استارتاپ -->
     <header class="text-center py-6 border-b gold-border mb-6">
-        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">مخصوص بیو پیج اینستاگرام (بدون نیاز به سایت)</span>
+        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">ویترین اختصاصی اینستاگرام (بدون نیاز به سایت)</span>
         <h1 class="text-2xl font-bold gold-text tracking-wider mt-3">سالن زیبایی رویال</h1>
-        <p class="text-xs text-gray-400 mt-1">رزرو آنلاین نوبت + گارانتی قطعی با بیعانه</p>
+        <p class="text-xs text-gray-400 mt-1">رزرو آنلاین خدمات تخصصی + بیعانه قطعی نوبت</p>
     </header>
 
-    <main class="space-y-5 flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800 shadow-xl">
+    <!-- راهنمای استفاده برای بیو اینستاگرام -->
+    <section class="bg-zinc-950 p-4 rounded-2xl border border-zinc-800 mb-5 space-y-2">
+        <h2 class="text-xs font-bold gold-text">📌 راهنمای نصب و استفاده در بیو پیج اینستاگرام:</h2>
+        <p class="text-[11px] text-gray-300 leading-relaxed">
+            سالن‌دارهای عزیز کافی است این لینک اختصاصی را در بخش <span class="gold-text font-bold">Website بیو پیج اینستاگرام</span> خود قرار دهند تا مشتریان بدون نیاز به سایت، به راحتی نوبت خود را ثبت کرده و بیعانه را واریز کنند.
+        </p>
+    </section>
+
+    <!-- فرم رزرو و خدمات کامل با قیمت عرف روز ایران -->
+    <main class="space-y-4 flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800 shadow-xl">
         <div>
-            <label class="block text-xs font-semibold mb-2 text-gray-300">انتخاب خدمت:</label>
+            <label class="block text-xs font-semibold mb-2 text-gray-300">دسته‌بندی و انتخاب خدمت تخصصی:</label>
             <select id="serviceSelect" class="w-full bg-zinc-900 border gold-border rounded-xl p-3 text-sm focus:outline-none">
-                <option value="براشینگ و استایل مو - ۲۵۰,۰۰۰ تومان (بیعانه: ۵۰,۰۰۰)">براشینگ و استایل مو (۲۵۰ هزار - بیعانه ۵۰ ه.ت)</option>
-                <option value="رنگ و لایت تخصصی - ۱,۵۰۰,۰۰۰ تومان (بیعانه: ۳۰۰,۰۰۰)">رنگ و لایت تخصصی (۱.۵ میلیون - بیعانه ۳۰۰ ه.ت)</option>
-                <option value="میکاپ و گریم عروس - ۳,۵۰۰,۰۰۰ تومان (بیعانه: ۱,۰۰۰,۰۰۰)">میکاپ عروس (۳.۵ میلیون - بیعانه ۱ میلیون)</option>
-                <option value="کاشت و ترمیم ناخن - ۴۰۰,۰۰۰ تومان (بیعانه: ۱۰۰,۰۰۰)">کاشت ناخن (۴۰۰ هزار - بیعانه ۱۰۰ ه.ت)</option>
+                <optgroup label="✨ خدمات مو و استایل (عرف بازار)">
+                    <option value="براشینگ و استایل تخصصی مو - ۲۵۰,۰۰۰ تومان (بیعانه: ۵۰,۰۰۰)">براشینگ و استایل مو - ۲۵۰,۰۰۰ تومان (بیعانه ۵۰ ه.ت)</option>
+                    <option value="کراتین و احیای حرفه‌ای مو - ۱,۸۰۰,۰۰۰ تومان (بیعانه: ۵۰۰,۰۰۰)">کراتین و احیای مو - ۱,۸۰۰,۰۰۰ تومان (بیعانه ۵۰۰ ه.ت)</option>
+                    <option value="رنگ، لایت و آمبره مو - ۲,۲۰۰,۰۰۰ تومان (بیعانه: ۶۰۰,۰۰۰)">رنگ و لایت تخصصی - ۲,۲۰۰,۰۰۰ تومان (بیعانه ۶۰۰ ه.ت)</option>
+                </optgroup>
+                <optgroup label="💄 چهره، میکاپ و ابرو">
+                    <option value="میکاپ و گریم تخصصی عروس - ۵,۰۰۰,۰۰۰ تومان (بیعانه: ۱,۵۰۰,۰۰۰)">میکاپ عروس - ۵,۰۰۰,۰۰۰ تومان (بیعانه ۱.۵ م)</option>
+                    <option value="شینیون تخصصی مو - ۹۰۰,۰۰۰ تومان (بیعانه: ۲۰۰,۰۰۰)">شینیون مو - ۹۰۰,۰۰۰ تومان (بیعانه ۲۰۰ ه.ت)</option>
+                    <option value="لیفت و لمینت ابرو و مژه - ۶۰۰,۰۰۰ تومان (بیعانه: ۱۵۰,۰۰۰)">لیفت ابرو و مژه - ۶۰۰,۰۰۰ تومان (بیعانه ۱۵۰ ه.ت)</option>
+                </optgroup>
+                <optgroup label="💅 ناخن، دست و پا (اسپا)">
+                    <option value="کاشت پودر و ژل ناخن - ۶۰۰,۰۰۰ تومان (بیعانه: ۱۵۰,۰۰۰)">کاشت ناخن - ۶۰۰,۰۰۰ تومان (بیعانه ۱۵۰ ه.ت)</option>
+                    <option value="ترمیمی ناخن و ژلیش - ۳۵۰,۰۰۰ تومان (بیعانه: ۱۰۰,۰۰۰)">ترمیم ناخن - ۳۵۰,۰۰۰ تومان (بیعانه ۱۰۰ ه.ت)</option>
+                    <option value="پدیکور و اسپا تخصصی پا - ۷۰۰,۰۰۰ تومان (بیعانه: ۲۰۰,۰۰۰)">پدیکور و اسپا پا - ۷۰۰,۰۰۰ تومان (بیعانه ۲۰۰ ه.ت)</option>
+                </optgroup>
+                <optgroup label="🌿 پوست و زیبایی (فیشیال)">
+                    <option value="فیشیال تخصصی و پاکسازی پوست - ۱,۲۰۰,۰۰۰ تومان (بیعانه: ۳۰۰,۰۰۰)">فیشیال تخصصی پوست - ۱,۲۰۰,۰۰۰ تومان (بیعانه ۳۰۰ ه.ت)</option>
+                </optgroup>
             </select>
         </div>
 
@@ -61,19 +84,19 @@
             </div>
         </div>
 
-        <!-- بخش پرداخت بیعانه بدون درگاه پیچیده -->
+        <!-- بخش کارت به کارت بیعانه -->
         <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/30 text-xs space-y-2">
-            <p class="gold-text font-bold">💳 راهنمای پرداخت بیعانه (جهت قطعی شدن نوبت):</p>
-            <p class="text-gray-300">لطفاً مبلغ بیعانه را به کارت زیر واریز کرده و دکمه ارسال به سالن را بزنید:</p>
-            <p class="font-mono text-center bg-black p-2 rounded text-amber-300" dir="ltr">6104-3379-xxxx-xxxx (به نام مدیریت سالن)</p>
+            <p class="gold-text font-bold">💳 راهنمای واریز بیعانه (جهت قطعی شدن نوبت):</p>
+            <p class="text-gray-300">لطفاً مبلغ بیعانه خدمت انتخابی را به کارت زیر واریز نمایید:</p>
+            <p class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">6104-3379-xxxx-xxxx</p>
         </div>
 
         <button onclick="submitBooking()" class="w-full gold-gradient text-black font-bold py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer">
-            ثبت نهایی نوبت و ارسال فیش/اطلاعات به سالن
+            ثبت نهایی و ارسال جزئیات به سالن
         </button>
 
         <div id="socialBox" class="hidden space-y-2 pt-2 border-t border-zinc-800">
-            <p class="text-xs text-center text-gray-400 mb-2">ارسال جزئیات و تایید نهایی به مدیر سالن:</p>
+            <p class="text-xs text-center text-gray-400 mb-2">تایید نهایی و ارسال فیش به مدیریت:</p>
             <div class="grid grid-cols-3 gap-2">
                 <a id="whatsappBtn" href="#" target="_blank" class="bg-green-700 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-green-600">واتس‌اپ</a>
                 <a id="telegramBtn" href="#" target="_blank" class="bg-blue-600 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-blue-500">تلگرام</a>
@@ -81,6 +104,27 @@
             </div>
         </div>
     </main>
+
+    <!-- معرفی پلن‌های تجاری ۲ و ۳ رویال فام برای فروش به سالن‌داران -->
+    <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border gold-border space-y-3">
+        <h2 class="text-sm font-bold gold-text">💎 پکیج‌های ارتقا و پلن‌های تجاری سالن‌داران:</h2>
+        
+        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800 space-y-1">
+            <div class="flex justify-between text-xs font-bold">
+                <span class="gold-text">پلن ۲: هوشمند و ضد کنسلی</span>
+                <span>۶,۵۰۰,۰۰۰ تومان</span>
+            </div>
+            <p class="text-[11px] text-gray-400">شامل: اتصال به چت‌بات دایرکت اینستاگرام، سیستم بیعانه‌گیر آنلاین، باشگاه مشتریان و پیامک خودکار یادآوری.</p>
+        </div>
+
+        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800 space-y-1">
+            <div class="flex justify-between text-xs font-bold">
+                <span class="gold-text">پلن ۳: امپراتوری سالن‌های VIP</span>
+                <span>۱۲,۰۰۰,۰۰۰ تومان</span>
+            </div>
+            <p class="text-[11px] text-gray-400">شامل: تمام امکانات پلن ۲ + محاسبه‌گر اتوماتیک پورسانت پرسنل، هوش مصنوعی تحلیل مشتری و پشتیبانی VIP.</p>
+        </div>
+    </section>
 
     <!-- پنل CRM محلی سالن -->
     <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border border-zinc-800">
@@ -103,7 +147,7 @@
         </div>
     </section>
 
-    <!-- فوتر استارتاپ رویال فام -->
+    <!-- فوتر رسمی رویال فام -->
     <footer class="text-center py-6 text-xs text-gray-400 border-t border-zinc-800 mt-6 space-y-2">
         <p class="text-gray-300">تمام این حقوق متعلق به استارتاپ فناورانه هوش مصنوعی رویال فام است</p>
         <p class="gold-text font-bold">اولین استارتاپ وایپ کدینگ هوش مصنوعی در ایران</p>
@@ -120,14 +164,14 @@
             const time = document.getElementById('timeSelect').value;
 
             if(!name || !phone || !date) {
-                alert('لطفاً فیلدها را کامل پر کنید.');
+                alert('لطفاً تمامی فیلدها را به دقت پر کنید.');
                 return;
             }
 
             bookings.push({ name, phone, service, date, time });
             updateCRM();
 
-            const message = `✨ رزرو جدید از اینستاگرام (همراه با بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}\n💳 وضعیت: پرداخت بیعانه انجام شد.`;
+            const message = `✨ رزرو جدید از اینستاگرام (همراه با بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}\n💳 وضعیت: واریز بیعانه انجام شد.`;
             const encodedMsg = encodeURIComponent(message);
             const targetPhone = "989366681963";
 
