@@ -15,37 +15,39 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 max-w-xl mx-auto">
 
+    <!-- تنظیمات اختصاصی سالن (شماره کارت مدیریت) -->
+    <script>
+        // سالن‌دار به راحتی می‌تواند شماره کارت و نام خود را در این بخش وارد کند
+        const salonConfig = {
+            cardHolderName: "مدیریت سالن زیبایی رویال",
+            cardNumber: "6104-3379-xxxx-xxxx",
+            whatsappNumber: "989366681963"
+        };
+    </script>
+
     <!-- هدر سالن -->
     <header class="text-center py-6 border-b gold-border mb-6">
-        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">ویترین اختصاصی اینستاگرام (مخصوص سالن‌های سراسر کشور)</span>
+        <span class="text-xs bg-zinc-800 gold-text px-3 py-1 rounded-full border gold-border">ویترین اختصاصی بیو اینستاگرام</span>
         <h1 class="text-2xl font-bold gold-text tracking-wider mt-3">سالن زیبایی رویال</h1>
-        <p class="text-xs text-gray-400 mt-1">رزرو آنلاین نوبت + سیستم ضد کنسلی با بیعانه</p>
+        <p class="text-xs text-gray-400 mt-1">رزرو آنلاین نوبت + گارانتی قطعی با بیعانه</p>
     </header>
 
-    <!-- راهنمای بیو اینستاگرام -->
-    <section class="bg-zinc-950 p-4 rounded-2xl border border-zinc-800 mb-5 space-y-2">
-        <h2 class="text-xs font-bold gold-text">📌 راهنمای نصب در بیو پیج اینستاگرام:</h2>
-        <p class="text-[11px] text-gray-300 leading-relaxed">
-            مدیران محترم سالن‌های زیبایی در ۲۲ منطقه تهران و ۳۱ استان کشور؛ کافی است این لینک اختصاصی را در قسمت <span class="gold-text font-bold">Website بیو پیج اینستاگرام</span> خود بگذارید تا بدون نیاز به سایت، مشتریان نوبت خود را ثبت کنند.
-        </p>
-    </section>
-
-    <!-- فرم رزرو با قیمت‌های لوکس عرف بازار و اعلام بیعانه -->
+    <!-- فرم رزرو با تعرفه‌های لوکس تهران و بیعانه -->
     <main class="space-y-4 flex-1 bg-zinc-950 p-5 rounded-2xl border border-zinc-800 shadow-xl">
         <div>
-            <label class="block text-xs font-semibold mb-2 text-gray-300">انتخاب خدمت تخصصی (مبالغ زیر صرفاً <span class="text-amber-400">بیعانه</span> جهت قطعی شدن نوبت است):</label>
+            <label class="block text-xs font-semibold mb-2 text-gray-300">انتخاب خدمت تخصصی (مبلغ پرداختی آنلاین <span class="text-amber-400">بیعانه</span> است):</label>
             <select id="serviceSelect" class="w-full bg-zinc-900 border gold-border rounded-xl p-3 text-sm focus:outline-none">
-                <optgroup label="✨ مو، کراتین و احیا (نرخ لوکس تهران: ۱۰ الی ۲۰ م)">
-                    <option value="کراتین و احیای تخصصی مو (قیمت کل: ۱۵,۰۰۰,۰۰۰ تومان) - بیعانه: ۲,۰۰۰,۰۰۰ تومان">کراتین و احیا تخصصی (کل: ۱۵ میلیون | بیعانه: ۲ میلیون)</option>
-                    <option value="رنگ، لایت و آمبره تخصصی (قیمت کل: ۸,۰۰۰,۰۰۰ تومان) - بیعانه: ۱,۰۰۰,۰۰۰ تومان">رنگ و لایت (کل: ۸ میلیون | بیعانه: ۱ میلیون)</option>
-                    <option value="براشینگ و استایل مو (قیمت کل: ۶۰۰,۰۰۰ تومان) - بیعانه: ۱۵۰,۰۰۰ تومان">براشینگ مو (کل: ۶۰۰ هزار | بیعانه: ۱۵۰ ه.ت)</option>
+                <optgroup label="✨ مو، کراتین و احیا (نرخ لوکس تهران)">
+                    <option value="کراتین و احیای تخصصی (کل: ۱۵,۰۰۰,۰۰۰ ت) - بیعانه: ۲,۰۰۰,۰۰۰ ت">کراتین و احیا تخصصی (کل: ۱۵ م | بیعانه: ۲ م)</option>
+                    <option value="رنگ و لایت تخصصی (کل: ۸,۰۰۰,۰۰۰ ت) - بیعانه: ۱,۰۰۰,۰۰۰ ت">رنگ و لایت (کل: ۸ م | بیعانه: ۱ م)</option>
+                    <option value="براشینگ و استایل مو (کل: ۶۰۰,۰۰۰ ت) - بیعانه: ۱۵۰,۰۰۰ ت">براشینگ مو (کل: ۶۰۰ ه | بیعانه: ۱۵۰ ه)</option>
                 </optgroup>
                 <optgroup label="💄 چهره و میکاپ عروس">
-                    <option value="میکاپ و گریم VIP عروس (قیمت کل: ۱۲,۰۰۰,۰۰۰ تومان) - بیعانه: ۳,۰۰۰,۰۰۰ تومان">میکاپ VIP عروس (کل: ۱۲ میلیون | بیعانه: ۳ میلیون)</option>
-                    <option value="لیفت و لمینت ابرو (قیمت کل: ۹۰۰,۰۰۰ تومان) - بیعانه: ۲۰۰,۰۰۰ تومان">لیفت ابرو (کل: ۹۰۰ هزار | بیعانه: ۲۰۰ ه.ت)</option>
+                    <option value="میکاپ و گریم VIP عروس (کل: ۱۲,۰۰۰,۰۰۰ ت) - بیعانه: ۳,۰۰۰,۰۰۰ ت">میکاپ VIP عروس (کل: ۱۲ م | بیعانه: ۳ م)</option>
+                    <option value="لیفت و لمینت ابرو (کل: ۹۰۰,۰۰۰ ت) - بیعانه: ۲۰۰,۰۰۰ ت">لیفت ابرو (کل: ۹۰۰ ه | بیعانه: ۲۰۰ ه)</option>
                 </optgroup>
                 <optgroup label="💅 ناخن و اسپا">
-                    <option value="کاشت و طراحی گریم ناخن (قیمت کل: ۱,۲۰۰,۰۰۰ تومان) - بیعانه: ۳۰۰,۰۰۰ تومان">کاشت ناخن (کل: ۱.۲ میلیون | بیعانه: ۳۰۰ ه.ت)</option>
+                    <option value="کاشت و طراحی ناخن (کل: ۱,۲۰۰,۰۰۰ ت) - بیعانه: ۳۰۰,۰۰۰ ت">کاشت ناخن (کل: ۱.۲ م | بیعانه: ۳۰۰ ه)</option>
                 </optgroup>
             </select>
         </div>
@@ -78,10 +80,12 @@
             </div>
         </div>
 
+        <!-- نمایش پویای شماره کارت سالن‌دار -->
         <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/30 text-xs space-y-2">
-            <p class="gold-text font-bold">💳 کارت به کارت بیعانه (جهت گارانتی و قطعی شدن نوبت):</p>
-            <p class="text-gray-300">مبلغ بیعانه مشخص شده را واریز کرده و فیش را برای سالن ارسال کنید:</p>
-            <p class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">6104-3379-xxxx-xxxx</p>
+            <p class="gold-text font-bold">💳 کارت به کارت بیعانه (جهت قطعی شدن نوبت):</p>
+            <p class="text-gray-300">لطفاً مبلغ بیعانه را به کارت زیر واریز نمایید:</p>
+            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">6104-3379-xxxx-xxxx</p>
+            <p id="displayHolder" class="text-[10px] text-center text-gray-400">به نام مدیریت سالن</p>
         </div>
 
         <button onclick="submitBooking()" class="w-full gold-gradient text-black font-bold py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer">
@@ -89,7 +93,7 @@
         </button>
 
         <div id="socialBox" class="hidden space-y-2 pt-2 border-t border-zinc-800">
-            <p class="text-xs text-center text-gray-400 mb-2">تایید نهایی نوبت از طریق پیام‌رسان:</p>
+            <p class="text-xs text-center text-gray-400 mb-2">ارسال فیش و تایید نهایی به مدیر سالن:</p>
             <div class="grid grid-cols-3 gap-2">
                 <a id="whatsappBtn" href="#" target="_blank" class="bg-green-700 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-green-600">واتس‌اپ</a>
                 <a id="telegramBtn" href="#" target="_blank" class="bg-blue-600 text-center py-2 rounded-xl text-xs font-bold text-white hover:bg-blue-500">تلگرام</a>
@@ -98,34 +102,32 @@
         </div>
     </main>
 
-    <!-- پلن‌های ۲ و ۳ تجاری (باز شده برای دیدن سالن‌دار) -->
-    <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border gold-border space-y-4">
-        <h2 class="text-sm font-bold gold-text text-center">🌟 پکیج‌های تجاری ویژه سالن‌داران (خرید سیستم)</h2>
+    <!-- ۳ پلن تجاری کامل و توسعه‌یافته برای فروش به سالن‌داران -->
+    <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border gold-border space-y-3">
+        <h2 class="text-sm font-bold gold-text text-center">🌟 پکیج‌های تجاری ویژه سالن‌داران</h2>
         
-        <!-- پلن 2 -->
-        <div class="bg-zinc-900 p-3.5 rounded-xl border border-amber-500/50 space-y-2">
-            <div class="flex justify-between items-center text-xs font-bold">
-                <span class="gold-text">پلن ۲: چت‌بات هوشمند و ضد کنسلی</span>
-                <span class="text-amber-400">۶,۵۰۰,۰۰۰ تومان</span>
+        <div class="bg-zinc-900 p-3 rounded-xl border border-zinc-800 space-y-1">
+            <div class="flex justify-between text-xs font-bold">
+                <span class="gold-text">پلن ۱: استارتر (مخصوص پیج‌های نوپا)</span>
+                <span class="text-amber-400">۲,۵۰۰,۰۰۰ تومان</span>
             </div>
-            <p class="text-[11px] text-gray-300">
-                ✅ فعال‌سازی چت آنلاین و خودکار دایرکت اینستاگرام<br>
-                ✅ سیستم دریافت بیعانه و حذف کنسلی‌های لحظه آخری<br>
-                ✅ باشگاه مشتریان و ارسال پیامک خودکار یادآوری
-            </p>
+            <p class="text-[11px] text-gray-400">لینک اختصاصی بیو اینستاگرام + سیستم نوبت‌دهی آنلاین + پنل CRM محلی مدیریت مشتریان.</p>
         </div>
 
-        <!-- پلن 3 -->
-        <div class="bg-zinc-900 p-3.5 rounded-xl border border-amber-500/50 space-y-2">
-            <div class="flex justify-between items-center text-xs font-bold">
+        <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/50 space-y-1">
+            <div class="flex justify-between text-xs font-bold">
+                <span class="gold-text">پلن ۲: هوشمند و ضد کنسلی (پرفروش‌ترین)</span>
+                <span class="text-amber-400">۶,۵۰۰,۰۰۰ تومان</span>
+            </div>
+            <p class="text-[11px] text-gray-400">اتصال به چت‌بات دایرکت اینستاگرام + سیستم دریافت بیعانه آنلاین + باشگاه مشتریان و یادآوری پیامکی.</p>
+        </div>
+
+        <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/50 space-y-1">
+            <div class="flex justify-between text-xs font-bold">
                 <span class="gold-text">پلن ۳: امپراتوری سالن‌های VIP تهران</span>
                 <span class="text-amber-400">۱۲,۰۰۰,۰۰۰ تومان</span>
             </div>
-            <p class="text-[11px] text-gray-300">
-                ✅ تمامی امکانات پلن ۲ به همراه هوش مصنوعی تحلیلگر<br>
-                ✅ محاسبه‌گر اتوماتیک پورسانت پرسنل و آرایشگرها<br>
-                ✅ پشتیبانی اختصاصی و VIP شش ماهه رویال فام
-            </p>
+            <p class="text-[11px] text-gray-400">تمام امکانات پلن ۲ + محاسبه‌گر اتوماتیک پورسانت پرسنل + هوش مصنوعی تحلیلگر + پشتیبانی VIP.</p>
         </div>
     </section>
 
@@ -158,6 +160,10 @@
     </footer>
 
     <script>
+        // بارگذاری خودکار اطلاعات کارت سالن‌دار
+        document.getElementById('displayCard').innerText = salonConfig.cardNumber;
+        document.getElementById('displayHolder').innerText = "به نام: " + salonConfig.cardHolderName;
+
         let bookings = [];
         function submitBooking() {
             const name = document.getElementById('clientName').value;
@@ -167,7 +173,7 @@
             const time = document.getElementById('timeSelect').value;
 
             if(!name || !phone || !date) {
-                alert('لطفاً فیلدها را کامل پر کنید.');
+                alert('لطفاً اطلاعات را کامل پر کنید.');
                 return;
             }
 
@@ -176,14 +182,13 @@
 
             const message = `✨ رزرو جدید از اینستاگرام (ثبت بیعانه) ✨\n👤 نام: ${name}\n📞 تلفن: ${phone}\n💇‍♀️ خدمت: ${service}\n📅 تاریخ: ${date}\n⏰ ساعت: ${time}`;
             const encodedMsg = encodeURIComponent(message);
-            const targetPhone = "989366681963";
 
-            document.getElementById('whatsappBtn').href = `https://wa.me/${targetPhone}?text=${encodedMsg}`;
+            document.getElementById('whatsappBtn').href = `https://wa.me/${salonConfig.whatsappNumber}?text=${encodedMsg}`;
             document.getElementById('telegramBtn').href = `https://t.me/share/url?url=${encodedMsg}`;
             document.getElementById('baleBtn').href = `https://ble.ir/send?text=${encodedMsg}`;
 
             document.getElementById('socialBox').classList.remove('hidden');
-            alert('✅ نوبت شما ثبت موقت شد! لطفاً برای تایید نهایی فیش بیعانه را به سالن ارسال کنید.');
+            alert('✅ نوبت ثبت شد! لطفاً فیش واریز بیعانه را به سالن ارسال کنید.');
         }
 
         function updateCRM() {
