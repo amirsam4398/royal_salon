@@ -15,13 +15,12 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 max-w-xl mx-auto">
 
-    <!-- تنظیمات اختصاصی سالن (شماره کارت مدیریت) -->
+    <!-- بخش تنظیمات اختصاصی سالن (سالن‌دار شماره کارت و نام خود را اینجا وارد می‌کند) -->
     <script>
-        // سالن‌دار به راحتی می‌تواند شماره کارت و نام خود را در این بخش وارد کند
         const salonConfig = {
-            cardHolderName: "مدیریت سالن زیبایی رویال",
-            cardNumber: "6104-3379-xxxx-xxxx",
-            whatsappNumber: "989366681963"
+            cardHolderName: "لطفاً نام صاحب کارت را وارد کنید", // نام صاحب حساب سالن‌دار
+            cardNumber: "---- ---- ---- ----",                 // شماره کارت ۱۶ رقمی سالن‌دار
+            whatsappNumber: "989366681963"                    // شماره واتس‌اپ دریافت فیش
         };
     </script>
 
@@ -43,7 +42,7 @@
                     <option value="براشینگ و استایل مو (کل: ۶۰۰,۰۰۰ ت) - بیعانه: ۱۵۰,۰۰۰ ت">براشینگ مو (کل: ۶۰۰ ه | بیعانه: ۱۵۰ ه)</option>
                 </optgroup>
                 <optgroup label="💄 چهره و میکاپ عروس">
-                    <option value="میکاپ و گریم VIP عروس (کل: ۱۲,۰۰۰,۰۰۰ ت) - بیعانه: ۳,۰۰۰,۰۰۰ ت">میکاپ VIP عروس (کل: ۱۲ م | بیعانه: ۳ م)</option>
+                    <option value="میکاپ و گریم VIP عروس (کل: ۱۲,۰۰۰,۰۰۰ ت) - بیعانه تخصصی: ۳,۰۰۰,۰۰۰ ت">میکاپ VIP عروس (کل: ۱۲ م | بیعانه: ۳ م)</option>
                     <option value="لیفت و لمینت ابرو (کل: ۹۰۰,۰۰۰ ت) - بیعانه: ۲۰۰,۰۰۰ ت">لیفت ابرو (کل: ۹۰۰ ه | بیعانه: ۲۰۰ ه)</option>
                 </optgroup>
                 <optgroup label="💅 ناخن و اسپا">
@@ -80,12 +79,12 @@
             </div>
         </div>
 
-        <!-- نمایش پویای شماره کارت سالن‌دار -->
+        <!-- بخش شماره کارت پویا و خالی برای سالن‌دار -->
         <div class="bg-zinc-900 p-3 rounded-xl border border-amber-500/30 text-xs space-y-2">
             <p class="gold-text font-bold">💳 کارت به کارت بیعانه (جهت قطعی شدن نوبت):</p>
             <p class="text-gray-300">لطفاً مبلغ بیعانه را به کارت زیر واریز نمایید:</p>
-            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">6104-3379-xxxx-xxxx</p>
-            <p id="displayHolder" class="text-[10px] text-center text-gray-400">به نام مدیریت سالن</p>
+            <p id="displayCard" class="font-mono text-center bg-black p-2 rounded text-amber-300 text-sm" dir="ltr">---- ---- ---- ----</p>
+            <p id="displayHolder" class="text-[10px] text-center text-gray-400">به نام: مدیریت سالن</p>
         </div>
 
         <button onclick="submitBooking()" class="w-full gold-gradient text-black font-bold py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 cursor-pointer">
@@ -102,7 +101,7 @@
         </div>
     </main>
 
-    <!-- ۳ پلن تجاری کامل و توسعه‌یافته برای فروش به سالن‌داران -->
+    <!-- ۳ پلن تجاری کامل -->
     <section class="mt-6 bg-zinc-950 p-4 rounded-2xl border gold-border space-y-3">
         <h2 class="text-sm font-bold gold-text text-center">🌟 پکیج‌های تجاری ویژه سالن‌داران</h2>
         
@@ -160,7 +159,7 @@
     </footer>
 
     <script>
-        // بارگذاری خودکار اطلاعات کارت سالن‌دار
+        // بارگذاری خودکار اطلاعات کارت سالن‌دار از بخش تنظیمات بالای کد
         document.getElementById('displayCard').innerText = salonConfig.cardNumber;
         document.getElementById('displayHolder').innerText = "به نام: " + salonConfig.cardHolderName;
 
